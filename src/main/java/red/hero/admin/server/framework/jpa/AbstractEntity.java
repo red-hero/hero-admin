@@ -37,7 +37,7 @@ public class AbstractEntity {
 	 * 
 	 * @return the id
 	 */
-	public Long getId() {
+	protected Long getId() {
 		return id;
 	}
 

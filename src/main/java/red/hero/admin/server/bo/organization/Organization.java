@@ -3,11 +3,11 @@ package red.hero.admin.server.bo.organization;
 import red.hero.admin.server.framework.jpa.AbstractEntity;
 
 /**
- * Created by mst on 21.06.16.
+ * Representing an Organization responsible managing Members.
  */
 public class Organization extends AbstractEntity {
 
-    String name;
+    private String name;
 
     public Organization() {
 
