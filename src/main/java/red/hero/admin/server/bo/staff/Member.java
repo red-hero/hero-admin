@@ -2,16 +2,27 @@ package red.hero.admin.server.bo.staff;
 
 import red.hero.admin.server.framework.jpa.AbstractEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Entity
 public class Member extends AbstractEntity {
 
     private String firstName;
 
+    @NotNull(message = "Name is required")
+    @Size(min = 3, max = 50, message = "name must be longer than 3 and less than 40 characters")
     private String lastName;
+
+    //@Temporal(TemporalType.TIMESTAMP)
+    //private Date birthDay;
+
+    //@NotNull(message = "Email is required")
+    //@Pattern(regexp = ".+@.+\\.[a-z]+", message = "Must be valid email")
+    //private String email;
 
     public Member() {
     }

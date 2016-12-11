@@ -2,6 +2,7 @@ package red.hero.admin.client.playground.vaadin;
 
 
 import com.vaadin.annotations.Theme;
+import com.vaadin.annotations.Title;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewDisplay;
 import com.vaadin.server.VaadinRequest;
@@ -12,6 +13,7 @@ import com.vaadin.ui.themes.ValoTheme;
 import org.springframework.beans.factory.annotation.Autowired;
 import red.hero.admin.server.bo.staff.MemberRepository;
 
+@Title("Hero Admin")
 @Theme("valo")
 @SpringUI
 @SpringViewDisplay
