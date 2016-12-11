@@ -1,15 +1,13 @@
 package red.hero.admin.server.bo.staff;
 
+import red.hero.admin.server.framework.jpa.AbstractEntity;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Member {
-
-    @Id
-    @GeneratedValue
-    private Long id;
+public class Member extends AbstractEntity {
 
     private String firstName;
 
@@ -21,14 +19,6 @@ public class Member {
     public Member(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getFirstName() {
@@ -50,7 +40,7 @@ public class Member {
     @Override
     public String toString() {
         return "Member{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
