@@ -19,8 +19,12 @@ public class HelloWorld extends UI implements ViewDisplay {
 
     private Panel springViewDisplay;
 
+    private final MemberRepository memberRepository;
+
     @Autowired
-    private MemberRepository memberRepository;
+    public HelloWorld(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -35,6 +39,8 @@ public class HelloWorld extends UI implements ViewDisplay {
 
         final CssLayout navigationBar = new CssLayout();
         navigationBar.addStyleName(ValoTheme.LAYOUT_COMPONENT_GROUP);
+        navigationBar.addComponent(createNavigationButton("UI Scoped View",
+                UIScopedView.VIEW_NAME));
         navigationBar.addComponent(createNavigationButton("View Scoped View",
                 ViewScopedView.VIEW_NAME));
         root.addComponent(navigationBar);
